@@ -30,5 +30,24 @@ class SortSpec extends Specification {
         }
     }
 
+
+    "insertionSort" should {
+        "handle an empty array" >> {
+            var array = Array[Int]()
+            Sort.insertionSort(array)
+            array must haveSameElements(Array[Int]())
+        }
+        "sort a single element array" >> {
+            var array = Array(1)
+            Sort.insertionSort(array)
+            array must haveSameElements(Array(1))
+        }
+        "sort a multiple element array" >> {
+            var array = Array(7,3,4,2,5,9)
+            Sort.insertionSort(array)
+            array must haveSameElements(Array(2,3,4,5,7,9))
+        }
+    }
+
 }
 
